@@ -1,0 +1,10 @@
+git status         (rot = schlecht/ grün = alles super)
+git add .          (adde alles was im Ordner ist / kann auch dateispezifisch sein)
+git status         (alles grün?)
+git commit -m "Kommentar"     (push ohne commit geht nicht)
+git push
+
+
+
+git status
+git pull
