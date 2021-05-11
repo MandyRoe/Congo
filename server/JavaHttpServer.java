@@ -37,7 +37,7 @@ public class JavaHttpServer implements Runnable{
 		connect = c;
 	}
 	
-	public static void main(String[] args) {
+	public static void startServer() {
 		try {
 		ServerSocket serverConnect = new ServerSocket(PORT);
 		System.out.println("Server started...\nListening for connections on port: " + PORT + " ...\n");

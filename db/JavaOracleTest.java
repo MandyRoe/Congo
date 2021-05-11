@@ -7,17 +7,18 @@ import java.sql.Statement;
 
 public class JavaOracleTest {
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+   
+      
         String dbURL = "jdbc:oracle:thin:@localhost:1521:XE"; //Portzahl jeweils anpassen!!!!
         String username = "system";
         String password = "fhdw1993";
-
+  
+        public static void startDB() {
         try {
-            Connection connection = DriverManager.getConnection(dbURL, username, password);
+            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1522:XE", "system", "fhdw1993");
             System.out.println("oracle DB connect success");
             
-            String sql = "INSERT INTO STUDENTS (NAME, EMAIL) " 
+         /*   String sql = "INSERT INTO STUDENTS (NAME, EMAIL) " 
             			+ "VALUES('Tobsi', 'my@company.de')";
             Statement statement = connection.createStatement();
             int rows = statement.executeUpdate(sql);
@@ -25,7 +26,7 @@ public class JavaOracleTest {
             if (rows > 0) {
             	System.out.println("row has been inserted");
             }
-            
+            */
             connection.close();
             
         } catch (SQLException e) {
@@ -33,5 +34,5 @@ public class JavaOracleTest {
             e.printStackTrace();
         }
     }
-
+    
 }
