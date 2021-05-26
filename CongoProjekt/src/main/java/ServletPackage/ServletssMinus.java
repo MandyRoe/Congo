@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Servletss
  */
-@WebServlet("/Minus")
+@WebServlet("/Plus")
 public class ServletssMinus extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

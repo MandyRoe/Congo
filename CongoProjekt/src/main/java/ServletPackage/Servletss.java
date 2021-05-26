@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Servletss
  */
-@WebServlet("/Plus") //dasch ist URL
+@WebServlet("/Minus") //dasch ist URL
 public class Servletss extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

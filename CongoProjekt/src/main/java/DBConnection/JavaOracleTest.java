@@ -15,7 +15,7 @@ public class JavaOracleTest {
   
         public static void startDB() {
         try {
-        	Class.forName("oracle.jdbc.driver.OracleDriver");
+        	//Class.forName("oracle.jdbc.driver.OracleDriver");
         	connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "fhdw1994");
             System.out.println("oracle DB connect success");
             

@@ -6,12 +6,12 @@ import DBConnection.JavaOracleTest;
 
 public class Usermanager {
 	public static User getUser(Integer i) {
-
+		
         Connection connection = JavaOracleTest.connection;
 		String sql = "select * from students where ID = " + i.toString();
 		
 		try {
-		
+			
            Statement statement = connection.createStatement();
            ResultSet rs = statement.executeQuery(sql);
           
