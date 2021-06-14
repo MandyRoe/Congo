@@ -7,9 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="Servlet1" method="post">
-Enter a number: <input type="text" name="number" size="5" />
-<input type="submit" value="Call Servlet">
-</form>
+
+
+
+<h3> user information: </h3>
+Id: ${retard.ID} <br/>
+Name: ${retard.name} <br/>
+Age: ${retard.email}
+
 </body>
-</html>	
+</html>
