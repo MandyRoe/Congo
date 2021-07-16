@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/Alex/Desktop/FHDW/4. Semester/Projekte der Wirtschaftsinformatik/tomcatordner/apache-tomcat-9.0.43/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Alex/Desktop/FHDW/4. Semester/Projekte der Wirtschaftsinformatik/CongoUPLOAD/Congo/ojdbc11-full/ojdbc11.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
