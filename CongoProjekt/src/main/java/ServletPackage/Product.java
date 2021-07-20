@@ -6,10 +6,10 @@ public class Product {
 	private String name;
 	private String img64;
 	private String descr;
-	private int price;
+	private float price;
 	
 
-	public Product(int iD, String name, String img64, String descr, int price) {
+	public Product(int iD, String name, String img64, String descr, float price) {
 		super();
 		ID = iD;
 		this.name = name;
@@ -44,7 +44,7 @@ public class Product {
 	public void setDescr(String descr) {
 		this.descr = descr;
 	}
-	public int getPrice() {
+	public float getPrice() {
 		return price;
 	}
 	public void setPrice(int price) {

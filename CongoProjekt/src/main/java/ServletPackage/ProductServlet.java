@@ -15,21 +15,21 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet("/Products")
-public class ProductServlet extends HttpServlet {
+public class ProductServlet extends HttpServlet implements listable {
 	private static final long serialVersionUID = 1L;
 
 
-	protected void doGet(
-			HttpServletRequest req, 
-			HttpServletResponse res) 
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
 		//	int i = Integer.parseInt(req.getParameter("num1"));                  //bei int muss geparsed werden
-			String i = req.getParameter("name");                                 //abgefragter Datentyp
+			
+		
+			String i = req.getParameter("product");                                 //abgefragter Datentyp          parameter linked to htmlfile
 			JavaOracleTest.startDB();
 			Product product = Productmanager.getProduct(i);                     //im Productmanager int oder String
 			req.setAttribute("Product", product);                               
-			req.getRequestDispatcher("NewProduct.jsp").forward(req, res);       //benutzte jsp Datei
-			System.out.println("Produktaufruf erfolgreich");
+			req.getRequestDispatcher("productDetails.jsp").forward(req, res);       //benutzte jsp Datei
+			System.out.println("Produkt wurde an jsp gesendet");
 
 	}
 
