@@ -22,7 +22,7 @@
 			</form>
 	
 	
-	<script src=ListScript.js async></script>
+
 
 <br> <br> <br> <br>
 					<A HREF="http://localhost:8080/CongoProjekt/index.html"> Home</A>
@@ -32,19 +32,16 @@
 	
 
 
-<p id=itemdescr ></p>
-
-
-
+<p id="itemdescr" ></p>
 
 
 
 <script>
-if (${Product.ID} != null){
-document.getElementById(itemdescr).innerHTML = ' <h3> Product information: </h3> <br/><br/> Item#: ${Product.ID} <br/> Name: ${Product.name} <br/> Description: ${Product.descr} <br/> Price: ${Product.price} <br/> Picture: <br/> &nbsp; &nbsp; &nbsp; &nbsp;<img src="data:image/jpeg;base64, ${Product.img64}" width="250" height="250"/>  <br/>'
+if (${Product.itmnbr} != null){
+document.getElementById("itemdescr").innerHTML = ' <h3> Product information: </h3> <br/><br/> Item#: ${Product.itmnbr} <br/> Name: ${Product.name} <br/> Description: ${Product.descr} <br/> Price: ${Product.price} <br/> Picture: <br/> &nbsp; &nbsp; &nbsp; &nbsp;<img src="data:image/jpeg;base64, ${Product.img64}" width="250" height="250"/>  <br/>'
 	
 } else {
-	document.getElementById(itemdescr).innerHTML = "Product not found"
+	document.getElementById("itemdescr").innerHTML = "<h3> Product not found </h3>"
 }
 </script>
 

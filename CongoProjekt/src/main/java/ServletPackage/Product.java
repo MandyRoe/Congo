@@ -2,16 +2,29 @@ package ServletPackage;
 
 
 public class Product {
-	private int ID;
+	
+	
+	private int itmnbr;
 	private String name;
 	private String img64;
 	private String descr;
 	private float price;
+	private int amount;
 	
 
-	public Product(int iD, String name, String img64, String descr, float price) {
+	public Product(int itmnbr, String name, String img64, String descr, float price, int amount) {
 		super();
-		ID = iD;
+		this.itmnbr = itmnbr;
+		this.name = name;
+		this.img64 = img64;
+		this.descr = descr;
+		this.price = price;
+		this.amount =amount;
+	}
+
+	public Product(int itmnbr, String name, String img64, String descr, float price) {
+		super();
+		this.itmnbr = itmnbr;
 		this.name = name;
 		this.img64 = img64;
 		this.descr = descr;
@@ -19,12 +32,30 @@ public class Product {
 	}
 
 	
+	
 
-	public int getID() {
-		return ID;
+
+	public int getAmount() {
+		return amount;
 	}
-	public void setID(int iD) {
-		ID = iD;
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public void setItmnbr(int itmnbr) {
+		this.itmnbr = itmnbr;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	public int getItmnbr() {
+		return itmnbr;
+	}
+	public void setID(int itmnbr) {
+		this.itmnbr = itmnbr;
 	}
 	public String getName() {
 		return name;

@@ -27,9 +27,9 @@ public class listTest {                 //static funktionen
 	  //arraylist.addAll(arralylist) = 
 	//arraylist.get(x) = abruf spezifischer position
 	//arraylist.size() = größe array
-	//arraylist.set(x, y) = setzen  eines wertes y an stelle x
+	//arraylist.set(x, y) = setzen  eines wertes y an position x
 //arraylist.isEmpty() = true oder false falls leer
-//arraylist.remove(x) = remove wert an stelle x
+//arraylist.remove(x) = remove wert an position x
 //boolean isRemoved = arraylist.remove(y)  ==> löscht ersten eintrag
 //arraylist.removeAll = löscht alles aus einer collection               
 //arraylist.clear = löscht einträge aus liste
