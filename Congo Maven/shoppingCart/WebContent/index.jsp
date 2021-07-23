@@ -7,6 +7,13 @@
     pageEncoding="ISO-8859-1"%>
     
  <%
+ 
+ User auth = (User) request.getSession().getAttribute("auth");                     //auth ist user objekt deswegen müssen wir casten
+ if(auth != null){
+ 	 request.setAttribute("auth", auth);
+ 	
+ } 
+ 
     ProductDao pd = new ProductDao(DbCon.getConnection());
     List<Product> products = pd.getAllProducts();
     
@@ -19,10 +26,7 @@
     	
     }
         
-   
-       
-    
-    
+
  %>      
 <!DOCTYPE html>
 <html>
@@ -43,7 +47,7 @@
 	for(Product p:products){ %>
 		<div class="col-md-4 my-4">
 		<div class="card w-100" style="width: 18rem;">                                      <!-- größe der angezeigten Produktcards -->
-		  <img class="card-img-top" src="product_images/<%= p.getImage()%>" alt="Iron">
+		 <a href="product-details?id=<%=p.getItmnbr()%>"> <img class="card-img-top" src="product_images/<%= p.getImage()%>"  alt="Error loading Image"> </a>
 		  <div class="card-body">
 		    <h5 class="card-title"><%=p.getName() %></h5>
 		    <h6 class="price">Price: $<%= p.getPrice() %></h6>                            <!-- jeweils Anzeige der Werte in Datenbank  -->

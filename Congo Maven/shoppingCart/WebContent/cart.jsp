@@ -8,15 +8,22 @@
     
     
 <%     
-    
-ArrayList<Cart> sessionCart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+User auth = (User) request.getSession().getAttribute("auth");                     //auth ist user objekt deswegen müssen wir casten
+if(auth != null){
+	 request.setAttribute("auth", auth);
+	
+} 
+
+
+ArrayList<Cart> sessionCart_list = (ArrayList<Cart>) session.getAttribute("cart-list");       
 List<Cart> cartProduct = null;    
-if(sessionCart_list!=null){
-	ProductDao pDao = new ProductDao(DbCon.getConnection());
-	cartProduct = pDao.getCartProducts(sessionCart_list);                                       //get cart with items
-	double total = pDao.getTotalCartPrice(sessionCart_list);
-	request.setAttribute("sessionCart_list", sessionCart_list);
-	request.setAttribute("total", total);
+	if(sessionCart_list!=null){
+		
+		ProductDao pDao = new ProductDao(DbCon.getConnection());
+		cartProduct = pDao.getCartProducts(sessionCart_list);                                       //get cart with items
+		double total = pDao.getTotalCartPrice(sessionCart_list);
+		request.setAttribute("sessionCart_list", sessionCart_list);
+		request.setAttribute("total", total);
 }
     
 %>    

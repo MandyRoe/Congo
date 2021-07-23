@@ -10,8 +10,8 @@ import model.Cart;
 import model.Product;
 
 
-public class ProductDao {
-	
+public class ProductDao {                                     //Data Access Object
+	 
 	private Connection connection;
 	private String query;
 	private PreparedStatement pst;
@@ -47,6 +47,33 @@ public class ProductDao {
 		}
 		
 		return products;
+	}
+	
+	
+	public Product getSinlgeProduct(int itemnumber) {
+		
+
+		try {
+		query = "select * from Products where ITEMNUMBER ="+itemnumber;
+		pst = this.connection.prepareStatement(query);
+		rs=pst.executeQuery();
+			while(rs.next()) {
+				Integer itmnbr = rs.getInt("ITEMNUMBER");
+				String name = rs.getString("NAME");
+				String descr = rs.getString("DESCR");
+				String category = rs.getString("CATEGORY");
+				float price = rs.getFloat("PRICE");
+				String image = rs.getString("IMG");
+				return new Product(itmnbr, name, image, descr, category, price);
+			}
+		
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+				
+		return null;
 	}
 	
 	

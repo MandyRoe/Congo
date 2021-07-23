@@ -3,7 +3,18 @@
 <%@page import="model.*" %>
 <%@page import="dao.*" %>
 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+    
 <% 
+
+
+User auth = (User) request.getSession().getAttribute("auth");                     //auth ist user objekt deswegen müssen wir casten
+if(auth != null){
+	 request.setAttribute("auth", auth);
+	response.sendRedirect("index.jsp");
+} 
 
 
 ArrayList<Cart> sessionCart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
@@ -13,18 +24,9 @@ if(sessionCart_list!=null){                                     //get cart with 
 	
 }
     
-
-   
-
-
-
-
 %>
 
-
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +43,7 @@ if(sessionCart_list!=null){                                     //get cart with 
 <div class="card w-50 mx-auto my-5">
 <div class="card-header text-center">User Login</div>
 <div class="card-body">
-<form action=" method="post"> 
+<form action="user-login" method="post"> 
 
 <div class="form-group">
 <label>Email Address</label>

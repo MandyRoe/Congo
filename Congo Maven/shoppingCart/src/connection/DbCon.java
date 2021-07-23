@@ -9,7 +9,7 @@ public class DbCon {
 
 	
 	
-	public static Connection connection=null;
+	public static Connection connection = null;
 	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		if(connection == null) {

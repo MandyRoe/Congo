@@ -8,6 +8,13 @@
     
     
 <% 
+User auth = (User) request.getSession().getAttribute("auth");                     //auth ist user objekt deswegen müssen wir casten
+if(auth != null){
+	 request.setAttribute("auth", auth);
+	
+} 
+
+
         ArrayList<Cart> sessionCart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
         
     if(sessionCart_list!=null){                                     //get cart with items

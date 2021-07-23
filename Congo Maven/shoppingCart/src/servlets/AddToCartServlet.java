@@ -32,7 +32,7 @@ public class AddToCartServlet extends HttpServlet {
 			int itemnumber = Integer.parseInt(request.getParameter("id"));
 			Cart cart = new Cart();
 			cart.setItmnbr(itemnumber);
-			cart.setQuantity(1); // Default quantity in cart
+			cart.setQuantity(1); 																	// Default quantity in cart
 
 			HttpSession session = request.getSession();
 			ArrayList<Cart> sessionCart_list = (ArrayList<Cart>) session.getAttribute("cart-list"); // get session
