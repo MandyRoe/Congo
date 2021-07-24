@@ -28,6 +28,7 @@ public class ProductDetailServlet extends HttpServlet {
 		ProductDao pd = new ProductDao(DbCon.getConnection());
 		
 		
+		request.setAttribute("Product", pd.getSinlgeProduct(itemnumber));
 		request.getRequestDispatcher("product.jsp").forward(request, response);
 		
 		

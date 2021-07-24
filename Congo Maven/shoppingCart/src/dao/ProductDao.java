@@ -52,19 +52,20 @@ public class ProductDao {                                     //Data Access Obje
 	
 	public Product getSinlgeProduct(int itemnumber) {
 		
-
+		Product p = new Product();
+		
 		try {
 		query = "select * from Products where ITEMNUMBER ="+itemnumber;
 		pst = this.connection.prepareStatement(query);
 		rs=pst.executeQuery();
 			while(rs.next()) {
-				Integer itmnbr = rs.getInt("ITEMNUMBER");
-				String name = rs.getString("NAME");
-				String descr = rs.getString("DESCR");
-				String category = rs.getString("CATEGORY");
-				float price = rs.getFloat("PRICE");
-				String image = rs.getString("IMG");
-				return new Product(itmnbr, name, image, descr, category, price);
+				p.setItmnbr(rs.getInt("ITEMNUMBER"));
+				p.setName(rs.getString("NAME"));
+				p.setDescr(rs.getString("DESCR"));
+				p.setCategory(rs.getString("CATEGORY"));
+				p.setPrice(rs.getFloat("PRICE"));
+				p.setImage(rs.getString("IMG"));
+				
 			}
 		
 		
@@ -73,7 +74,7 @@ public class ProductDao {                                     //Data Access Obje
 		}
 		
 				
-		return null;
+		return p;
 	}
 	
 	
