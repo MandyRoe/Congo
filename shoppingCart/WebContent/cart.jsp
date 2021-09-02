@@ -76,21 +76,21 @@ font-size : 25px;
 		<td><%= c.getName() %></td>
 		<td><%= c.getCategory() %></td>
 		<td><%= dcf.format(c.getPrice()) %></td>                                                                                          <!-- for loop for each added item in cart  -->
-
+									
 		<td>
-		<form action="" method="post" class="form-inline">
+		<form action="order-now" method="post" class="form-inline">																			 <!-- doPost method in oder-now cart  -->							
 		<input type="hidden" name="id" value="<%=c.getItmnbr() %>" class="form-input">
-		<div class="form-group d-flex justify-content-between"> 
+		<div class="form-group d-flex justify-content-between w-35"> 
 
-		<a class="btn btn-small btn-incre" href="quantity-inc-dec?action=inc&id=<%= c.getItmnbr() %>"><i class="fas fa-plus-square"></i> </a>     	 <!-- plus button -->
-		<input type="text" name="quantity" class="form-control" value="<%= c.getQuantity() %>" readonly>							                                     <!-- Anzeigefeld Menge -->
-		<a class="btn btn-small btn-decre" href="quantity-inc-dec?action=dec&id=<%= c.getItmnbr() %>"><i class="fas fa-minus-square"></i> </a>       <!-- minus button -->
+		<a class="btn btn-small btn-incre" href="quantity-inc-dec?action=inc&id=<%= c.getItmnbr() %>"><i class="fas fa-plus-square"></i> </a>     						 <!-- plus button -->
+		<input type="text" name="quantity" class="form-control w-35" value="<%= c.getQuantity() %>"  readonly>							                                     <!-- Anzeigefeld Menge -->
+		<a class="btn btn-small btn-decre" href="quantity-inc-dec?action=dec&id=<%= c.getItmnbr() %>"><i class="fas fa-minus-square"></i> </a>    						   <!-- minus button -->
 		</div>
-
+		<button type="submit" class="btn btn-primary btn sm">Buy</button>
 		</form>
 
 		</td>
-		<td><a class="btn btn sm btn-danger" href="#">remove</a></td>
+		<td><a class="btn btn sm btn-danger" href="remove-from-cart?id=<%=c.getItmnbr() %>">remove</a></td>
 		</tr>
 <% 	}
 	
