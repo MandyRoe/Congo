@@ -86,7 +86,7 @@ font-size : 25px;
 		<input type="text" name="quantity" class="form-control w-35" value="<%= c.getQuantity() %>"  readonly>							                                     <!-- Anzeigefeld Menge -->
 		<a class="btn btn-small btn-decre" href="quantity-inc-dec?action=dec&id=<%= c.getItmnbr() %>"><i class="fas fa-minus-square"></i> </a>    						   <!-- minus button -->
 		</div>
-		<button type="submit" class="btn btn-primary btn sm">Buy</button>
+		
 		</form>
 
 		</td>

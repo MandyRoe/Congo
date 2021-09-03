@@ -28,7 +28,9 @@ if (auth != null) {
 </head>
 <body>
 	<%@include file="includes/navbar.jsp"%>
-	<h1>insert product details here</h1>
+	
+	<div class="container">
+	
 	
 	
 
@@ -49,9 +51,9 @@ if (auth != null) {
 		  </div>
 		</div>
 		</div>
-	
+	<h1>insert product details here</h1>
 
-
+</div>
 
 
 	<%@include file="includes/footer.jsp"%>

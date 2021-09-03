@@ -34,6 +34,11 @@ if(auth != null){
 </head>
 <body>
 <%@include file="includes/navbar.jsp" %>
+
+
+
+
+<div class="container">
 <h1>THANK YOU FOR YOUR ORDER</h1>
 
 <br> Your order number: 
@@ -43,7 +48,7 @@ if(auth != null){
 		<div class="form-group d-flex justify-content-between"> 
 <input type="text" name="quantity" class="form-control" value="xyz" width="1" readonly>
 </div></form></td>
-
+</div>
 
 <%@include file="includes/footer.jsp" %>
 </body>

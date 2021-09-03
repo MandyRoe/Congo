@@ -39,6 +39,8 @@ List<Cart> cartProduct = null;
 <body>
 <%@include file="includes/navbar.jsp" %>
 
+<div class="container">
+
 <h1>Your Order: </h1> 
  <br> <br>
 
@@ -72,54 +74,54 @@ List<Cart> cartProduct = null;
 } %>
 
 
-<div class="ui form">
+
   <div class="grouped fields">
-    <label>Payment method</label>
+    <h4>Payment method</h4>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2" checked="checked">
+        <input type="radio" name="check" checked="checked">
         <label>PayPal</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2">
+        <input type="radio" name="check">
         <label>Überweisung</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2">
+        <input type="radio" name="check">
         <label>Rechnung</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2">
+        <input type="radio" name="check">
         <label>Kreditkarte</label>
       </div>
     </div>
   </div>
-</div>
 
 
-<div class="ui form">
+
+
   <div class="grouped fields">
-    <label>Delivery Method</label>
+    <h4>Delivery Method</h4>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2" checked="checked">
+        <input type="radio" name="check" checked="checked">
         <label>Standard</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2">
+        <input type="radio" name="check">
         <label>Premium</label>
       </div>
     </div>
        </div>
-    </div>
+   
 
 
 
@@ -128,8 +130,8 @@ List<Cart> cartProduct = null;
 
 
 </tbody>
-
-
+</div>
+ </div>
 
 
 <%@include file="includes/footer.jsp" %>
