@@ -44,7 +44,7 @@ if (auth != null) {
 			<h6 class="describtion">Category: ${Product.descr}</h6>
 		
 		 <div class="mt-3 d-flex justify-content-between">
-		   <a href="add-to-cart?id=${Product.descr}" class="btn btn-dark">Add to Cart</a>                           <!-- Itemnumber wird aus der URL geholt  Buttons pro Card -->
+		   <a href="add-to-cart?id=<%=p.getItmnbr() %>" class="btn btn-dark">Add to Cart</a>                           <!-- Itemnumber wird aus der URL geholt  Buttons pro Card -->
 		 </div>
 		   
 		  

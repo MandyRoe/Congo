@@ -34,6 +34,7 @@ if(auth != null){
 </head>
 <body>
 <%@include file="includes/navbar.jsp" %>
+<div class="container">
 <h3>Congo AG  <br>
 Congostraße 69  <br>
 50000 Köln <br>
@@ -45,7 +46,7 @@ UstID: DE123456789<br>
 Steuernummer: 11/222/33333<br>
 
 </h3>
-
+</div>
 
 <%@include file="includes/footer.jsp" %>
 </body>
