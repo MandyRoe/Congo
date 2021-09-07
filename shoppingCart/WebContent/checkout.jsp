@@ -38,9 +38,7 @@ List<Cart> cartProduct = null;
 </head>
 <body>
 <%@include file="includes/navbar.jsp" %>
-
 <div class="container">
-
 <h1>Your Order: </h1> 
  <br> <br>
 
@@ -52,17 +50,16 @@ List<Cart> cartProduct = null;
 		<tr>
 		<td><%= c.getName() %></td>
 		<td><%= c.getCategory() %></td>
-		<td><%= c.getPrice() %></td>  
-		Euro                                                                                        <!-- for loop for each added item in cart  -->
+		<td><%= c.getPrice() %></td>                                                                                          <!-- for loop for each added item in cart  -->
 
 		<td>
 		<form action="" method="post" class="form-inline">
 		<input type="hidden" name="id" value="<%=c.getItmnbr() %>" class="form-input">
 		<div class="form-group d-flex justify-content-between"> 
+
+
+		<input type="text" name="quantity" class="form-control" value="1" readonly>							 <!-- Anzeigefeld Menge -->
 	
-		
-		<input type="text" name="quantity" class="form-control" value="<%= c.getQuantity() %>" readonly>							 <!-- Anzeigefeld Menge -->
-		<div class="col mx 4">Stück</div>
 		</div>
 
 		</form>
@@ -75,54 +72,54 @@ List<Cart> cartProduct = null;
 } %>
 
 
-
+<div class="ui form">
   <div class="grouped fields">
-    <h4>Payment method</h4>
+    <label>Payment method</label>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="check" checked="checked">
+        <input type="radio" name="example2" checked="checked">
         <label>PayPal</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="check">
+        <input type="radio" name="example2">
         <label>Überweisung</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="check">
+        <input type="radio" name="example2">
         <label>Rechnung</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="check">
+        <input type="radio" name="example2">
         <label>Kreditkarte</label>
       </div>
     </div>
   </div>
+</div>
 
 
-
-
+<div class="ui form">
   <div class="grouped fields">
-    <h4>Delivery Method</h4>
+    <label>Delivery Method</label>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="check" checked="checked">
+        <input type="radio" name="example2" checked="checked">
         <label>Standard</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="check">
+        <input type="radio" name="example2">
         <label>Premium</label>
       </div>
     </div>
        </div>
-   
+    </div>
 
 
 
@@ -131,8 +128,9 @@ List<Cart> cartProduct = null;
 
 
 </tbody>
+
 </div>
- </div>
+
 
 
 <%@include file="includes/footer.jsp" %>

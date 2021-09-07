@@ -35,19 +35,17 @@ if(auth != null){
 <body>
 <%@include file="includes/navbar.jsp" %>
 <div class="container">
-<h3>Congo AG  <br>
-Congostraße 69  <br>
-50000 Köln <br>
-Email: info@congo.de <br>
-Tel: 0228/112358<br>
-Registergericht: Amtsgericht Bonn<br>
-Registernummer: HRA 12345<br>
-UstID: DE123456789<br>
-Steuernummer: 11/222/33333<br>
+<h1>THANK YOU FOR YOUR ORDER</h1>
 
-</h3>
+<br> Your order number: 
+<td>
+		<form action="" method="post" class="form-inline">
+		<input type="hidden" name="id" value="" class="form-input">
+		<div class="form-group d-flex justify-content-between"> 
+<input type="text" name="quantity" class="form-control" value="xyz" width="1" readonly>
+</div></form></td>
+
 </div>
-
 <%@include file="includes/footer.jsp" %>
 </body>
 </html>
