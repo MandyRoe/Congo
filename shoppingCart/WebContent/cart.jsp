@@ -56,7 +56,8 @@ font-size : 25px;
 
 
 <div class="container">
-<div class="d-flex py-3"><h3>Total Price: Euro ${ (total>0)?dcf.format(total):0 }  </h3><a class="mx-3 btn btn-primary" href="checkout.jsp">Check Out</a> </div>    <!--  total price aus cart list aus der session, ansonsten 0 -->
+<div class="d-flex py-3"><h3> Total Price:  Euro ${ (total>0)?dcf.format(total):0 }  </h3><a class="mx-3 btn btn-primary" href="checkout.jsp">Check Out</a> </div>    <!--  total price aus cart list aus der session, ansonsten 0 -->
+
 
 <table class="table table-light"> 
 <thead>

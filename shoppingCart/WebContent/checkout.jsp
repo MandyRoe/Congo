@@ -52,16 +52,17 @@ List<Cart> cartProduct = null;
 		<tr>
 		<td><%= c.getName() %></td>
 		<td><%= c.getCategory() %></td>
-		<td><%= c.getPrice() %></td>                                                                                          <!-- for loop for each added item in cart  -->
+		<td><%= c.getPrice() %></td>  
+		Euro                                                                                        <!-- for loop for each added item in cart  -->
 
 		<td>
 		<form action="" method="post" class="form-inline">
 		<input type="hidden" name="id" value="<%=c.getItmnbr() %>" class="form-input">
 		<div class="form-group d-flex justify-content-between"> 
-
-
-		<input type="text" name="quantity" class="form-control" value="1" readonly>							 <!-- Anzeigefeld Menge -->
 	
+		
+		<input type="text" name="quantity" class="form-control" value="<%= c.getQuantity() %>" readonly>							 <!-- Anzeigefeld Menge -->
+		<div class="col mx 4">Stück</div>
 		</div>
 
 		</form>
