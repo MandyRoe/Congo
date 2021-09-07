@@ -24,14 +24,9 @@ if(auth != null){
 </head>
 <body>
 <%@include file="includes/navbar.jsp" %>
-
+<div class="container">
 <h1>Rechte </h1> 
  <br> <br>
-	<div class="d-flex py-3">
-			<a class="mx-3 btn btn-primary" href="ChangeUsers.jsp">Change Users</a>
-		</div>
-	
-
 		<table class="table table-light">
 			<thead>
 				<tr>
@@ -40,6 +35,7 @@ if(auth != null){
 					<th scope="col">EMAIL</th>
 					<th scope="col">PASSWORD</th>
 					<th scope="col">RECHTE</th>
+					<th scope="col">CONFIRM</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,18 +53,26 @@ if(auth != null){
 
 				%>
 				
-				<tr>
-					<td><%=rs.getInt("ID")%></td>
-					<td><%=rs.getString("NAME")%></td>
-					<td><%=rs.getString("EMAIL")%></td>
-					<td><%=rs.getString("PASSWORD")%></td>
-					<td><%=rs.getInt("RECHTE")%></td>
-				</tr>	
+			<tr>
+				
+			<form 	action="ChangeUserDataPOG" method="post">
+					<td><input type="hidden" name="ID" value="<%=rs.getInt("ID")%>" /> <%=rs.getInt("ID")%> </td>
+					<td> <input type="text" id="NAME" name="NAME" value=<%=rs.getString("NAME")%>></td>
+					<td> <input type="text" id="EMAIL" name="EMAIL" value=<%=rs.getString("EMAIL")%>></td>
+					<td> <input type="text" id="PASSWORD" name="PASSWORD" value=<%=rs.getString("PASSWORD")%>></td>
+					<td> <input type="text" id="RECHTE" name="RECHTE" value=<%=rs.getInt("RECHTE")%>></td>
+					<td> <input type="submit" class="btn btn-primary" value="commit"></td>  
+					
+			</form>
+					
+			</tr>	
 				<% }} catch (SQLException e) {
             System.out.println("ups, error");
             e.printStackTrace();}%>
             </tbody>
             
             </table>
+            </div>
+            <%@include file="includes/footer.jsp" %>
             </body>
             </html>

@@ -19,21 +19,15 @@ if(auth != null){
 
 <html>
 <head>
-<title>Orders</title>
+<title>Change Listings</title>
 <%@include file="includes/head.jsp" %>
 </head>
 <body>
 <%@include file="includes/navbar.jsp" %>
 
-
 <div class="container">
-<h1>LISTINGS </h1> 
+<h1>Rechte </h1> 
  <br> <br>
-	<div class="d-flex py-3">
-			<a class="mx-3 btn btn-primary" href="ChangeUsers.jsp">Change Listings</a>
-		</div>
-	
-		
 		<table class="table table-light">
 			<thead>
 				<tr>
@@ -42,6 +36,7 @@ if(auth != null){
 					<th scope="col">DESCR</th>
 					<th scope="col">PRICE</th>
 					<th scope="col">CATEGORY</th>
+					<th scope="col">CONFIRM</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -59,21 +54,27 @@ if(auth != null){
 
 				%>
 				
-				<tr>
-					<td><%=rs.getInt("ITEMNUMBER")%></td>
-					<td><%=rs.getString("NAME")%></td>
-					<td><%=rs.getString("DESCR")%></td>
-					<td><%=rs.getInt("PRICE")%></td>
-					<td><%=rs.getString("CATEGORY")%></td>
-				</tr>	
+			<tr>
+				
+			<form 	action="ChangeListingPOG" method="post">
+					<td><input type="hidden" name="ITEMNUMBER" value="<%=rs.getInt("ITEMNUMBER")%>" /> <%=rs.getInt("ITEMNUMBER")%> </td>
+					<td> <input type="text" id="NAME" name="NAME" value=<%=rs.getString("NAME")%>></td>
+					<td> <input type="text" id="DESCR" name="DESCR" value=<%=rs.getString("DESCR")%>></td>
+					<td> <input type="text" id="PRICE" name="PRICE" value=<%=rs.getInt("PRICE")%>></td>
+					<td> <input type="text" id="CATEGORY" name="CATEGORY" value=<%=rs.getString("CATEGORY")%>></td>
+					<td> <input type="submit" value ="commit" class="btn btn-primary"></td> 
+					
+			</form>
+					
+			</tr>	
 				<% }} catch (SQLException e) {
             System.out.println("ups, error");
             e.printStackTrace();}%>
             </tbody>
-           
-          
+            
             </table>
-            </div> 
+           
+            </div>
+             <%@include file="includes/footer.jsp" %>
             </body>
             </html>
-            
