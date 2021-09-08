@@ -27,10 +27,10 @@ if(auth != null){
 
 
 <div class="container">
-<h1>LISTINGS </h1> 
+<div class="card-header my-3">Products</div>
  <br> <br>
 	<div class="d-flex py-3">
-			<a class="mx-3 btn btn-primary" href="ChangeUsers.jsp">Change Listings</a>
+			<a class="mx-3 btn btn-primary" href="Change Listings.jsp">Change Listings</a>
 		</div>
 	
 		
@@ -75,5 +75,6 @@ if(auth != null){
             </table>
             </div> 
             </body>
+            <%@include file="includes/footer.jsp" %>
             </html>
             

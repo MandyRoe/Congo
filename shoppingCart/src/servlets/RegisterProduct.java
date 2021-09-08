@@ -44,8 +44,7 @@ public class RegisterProduct extends HttpServlet {
 			
 			String sql = "select NAME from PRODUCTS";
 			
-			String sql1 = "INSERT INTO PRODUCTS(NAME, DESCR, PRICE, CATEGORY) VALUES ('"+request.getParameter("NAME")+
-                    "', '"+request.getParameter("DESCR")+
+			String sql1 = "INSERT INTO PRODUCTS(NAME, IMG, DESCR, PRICE, CATEGORY) VALUES ('"+request.getParameter("NAME")+"', 'placeholder.jpg', '"+request.getParameter("DESCR")+
                     "', '"+request.getParameter("PRICE")+
                     "', '"+request.getParameter("CATEGORY")+"')";
             System.out.println(sql1);

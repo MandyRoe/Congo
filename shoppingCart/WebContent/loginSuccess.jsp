@@ -39,36 +39,36 @@ if (sessionCart_list != null) {
 <body>
 <%@include file="includes/navbar.jsp" %>
 
+
 <div class="container">
-<div class="card-header my-3">Orders</div>
-<br> <br>
-	<table class="table table-light">
-			<thead>
-				<tr>
-					<th scope="col">ORDERID</th>
 
-				</tr>
-			</thead>
-			<tbody>
+<div class="card w-50 mx-auto my-5">
+<div class="card-header text-center">Success! <div class="col-my-2">You may now log in</div></div>
 
-				
-			<tr>
-				
-			<form 	action="OrderCheck.jsp" method="post">
-					<td> <input type="text" id="ORDERID" name="ORDERID" value=""></td>
-					<td> <input type="submit"></td>  
-					
-			</form>
-				<% String orderid = request.getParameter("ORDERID");
-				   HttpSession sess = request.getSession(); 
-				   sess.setAttribute("ORDERID", orderid);
-						%>
+<div class="card-body">
+<form action="user-login" method="post"> 
 
-			</tr>	
-				
-            </tbody>
-            
-            </table>
-            </body>
-            <%@include file="includes/footer.jsp"%>
-            </html>
+<div class="form-group">
+<label>Email Address</label>
+<input type ="email" class="form-control" name="login-email" placeholder="Enter your Email" required>
+</div>
+
+<div class="form-group">
+<label>Password</label>
+<input type ="password" class="form-control" name="login-password" placeholder="********" required>
+</div>
+
+
+<div class="text-center">
+<button type="submit" class="btn btn-primary">Login</button>
+</div>
+
+
+</form> 
+</div>
+</div>
+</div>
+
+<%@include file="includes/footer.jsp" %>
+</body>
+</html>

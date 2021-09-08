@@ -39,7 +39,8 @@ List<Cart> cartProduct = null;
 <body>
 <%@include file="includes/navbar.jsp" %>
 
-<h1>Your Order: </h1> 
+<div class="container">
+<div class="card-header my-3">Your Order</div>
  <br> <br>
 
 
@@ -58,7 +59,8 @@ List<Cart> cartProduct = null;
 		<div class="form-group d-flex justify-content-between"> 
 
 
-		<input type="text" name="quantity" class="form-control" value=<%= c.getQuantity() %> readonly>							 <!-- Anzeigefeld Menge -->
+		<input type="text" name="quantity" class="form-control"
+									value="<%=c.getQuantity()%>" readonly>						 <!-- Anzeigefeld Menge -->
 	
 		</div>
 
@@ -77,25 +79,25 @@ List<Cart> cartProduct = null;
     <label>Payment method</label>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2" checked="checked">
+        <input type="radio" name="payment" checked="checked">
         <label>PayPal</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2">
+        <input type="radio" name="payment">
         <label>Überweisung</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2">
+        <input type="radio" name="payment">
         <label>Rechnung</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2">
+        <input type="radio" name="payment">
         <label>Kreditkarte</label>
       </div>
     </div>
@@ -108,17 +110,17 @@ List<Cart> cartProduct = null;
     <label>Delivery Method</label>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2" checked="checked">
+        <input type="radio" name="delivery" checked="checked">
         <label>Standard</label>
       </div>
     </div>
     <div class="field">
       <div class="ui radio checkbox">
-        <input type="radio" name="example2">
+        <input type="radio" name="delivery">
         <label>Premium</label>
       </div>
     </div>
-       </div>
+      </div>
     </div>
 
 
@@ -133,6 +135,8 @@ List<Cart> cartProduct = null;
 
 
 
-<%@include file="includes/footer.jsp" %>
+
+</div>
 </body>
+<%@include file="includes/footer.jsp" %>
 </html>

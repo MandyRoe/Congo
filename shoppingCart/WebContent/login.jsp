@@ -60,6 +60,11 @@ if(sessionCart_list!=null){                                     //get cart with 
 <button type="submit" class="btn btn-primary">Login</button>
 </div>
 
+<div>
+<a href="register.jsp">Register</a>
+</div>
+
+
 </form> 
 </div>
 </div>

@@ -68,6 +68,7 @@ public class RegisterServlet extends HttpServlet {
     		if (counter == 0){
                Statement statement1 = connection.createStatement();                // statement verbindung zur Datenbank
                int rs1 = statement1.executeUpdate(sql1)    ;
+               response.sendRedirect("loginSuccess.jsp");
     		}
 	           
 
@@ -86,5 +87,6 @@ public class RegisterServlet extends HttpServlet {
 			e1.printStackTrace();
 		}
 		}
+	
 		}
 		

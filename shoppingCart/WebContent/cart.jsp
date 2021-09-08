@@ -55,9 +55,10 @@ if (sessionCart_list != null) {
 
 
 	<div class="container">
+	<div class="card-header my-3">Cart</div>
 		<div class="d-flex py-3">
 			<h3>Total Price: Euro ${ (total>0)?dcf.format(total):0 }</h3>
-			<a class="mx-3 btn btn-primary" href="checkout.jsp">Check Out</a>
+			<a class="mx-5 btn btn-primary" href="checkout.jsp">Check Out</a>
 		</div>
 		<!--  total price aus cart list aus der session, ansonsten 0 -->
 
@@ -105,7 +106,7 @@ if (sessionCart_list != null) {
 						</form>
 
 					</td>
-					<td><a class="btn btn sm btn-danger" href="#">remove</a></td>
+					<td><a class="btn btn sm btn-danger" href="remove-from-cart?id=<%=c.getItmnbr() %>">remove</a></td>
 				</tr>
 				<%
 				}

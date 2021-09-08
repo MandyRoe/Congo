@@ -25,7 +25,8 @@ if(auth != null){
 <body>
 <%@include file="includes/navbar.jsp" %>
 
-<h1>Rechte </h1> 
+<div class="container">
+<div class="card-header my-3">Edit Products</div>
  <br> <br>
 		<table class="table table-light">
 			<thead>
@@ -98,5 +99,7 @@ if(auth != null){
 					
 			</form>	
 			</table>
+			</div>
+			<%@include file="includes/footer.jsp" %>
             </body>
             </html>

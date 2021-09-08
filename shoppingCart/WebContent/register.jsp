@@ -36,19 +36,20 @@ if(auth != null){
 <form action="RegisterServlet" method="post"> 
 
 <div class="form-group">
-<label>EMAILNAME</label>
+<label>E-Mail</label>
 <input type ="email" class="form-control" name="register-email" placeholder="Enter your Email" required>
-  
+
 </div>
 <div class="form-group">
 
 
-<label>NAME</label>
-<input name="register-name" placeholder="Enter your NAME" required>
+<div class="form-group">
+<label>Name</label>
+<input type ="text" class="form-control" name="register-name" placeholder="Enter your Name" required>
 </div>
 
 <div class="form-group">
-<label>Enter your PASSWORD</label>
+<label>Enter your password</label>
 <input type ="password" class="form-control" name="register-password" placeholder="********" required>
 </div>
 

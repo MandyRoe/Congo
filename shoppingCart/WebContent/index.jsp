@@ -47,7 +47,7 @@
 	for(Product p:products){ %>
 		<div class="col-md-4 my-4">
 		<div class="card w-100" style="width: 18rem;">                                      <!-- größe der angezeigten Produktcards -->
-		<form action = product-details> <a href="product-details?id=<%=p.getItmnbr()%>"> <img class="card-img-top" src="product_images/<%= p.getImage()%>"  alt="Error loading Image"> </a></form>
+		<form action = product-details> <a href="product-details?id=<%=p.getItmnbr()%>"> <img class="card-img-top" src="product_images/<%=p.getImage()%>"  alt="Error loading Image"> </a></form>
 		  <div class="card-body">
 		    <h5 class="card-title"><%=p.getName() %></h5>
 		    <h6 class="price">Price: $<%= p.getPrice() %></h6>                            <!-- jeweils Anzeige der Werte in Datenbank  -->

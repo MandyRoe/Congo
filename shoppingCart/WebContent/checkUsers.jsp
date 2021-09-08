@@ -9,7 +9,7 @@ if(auth != null){
 	 request.setAttribute("auth", auth);}%>
 
 <%  if(auth!= null && auth.getRechte()== 5){    %>           															<!-- if user not logged in logout & orders visible-->
-		<meta h"rttp-equiv=efresh" content="0; url=http://example.com/" />
+		<meta http-equiv="refresh" content="0; url=http://example.com/" />
 		<p><a href="http://example.com/">Redirect</a></p> 
     <% } %>
 
@@ -24,13 +24,15 @@ if(auth != null){
 </head>
 <body>
 <%@include file="includes/navbar.jsp" %>
+<div class="container">
+<div class="card-header my-3">Users</div>
 
-<h1>Rechte </h1> 
- <br> <br>
-	<div class="d-flex py-3">
-			<a class="mx-3 btn btn-primary" href="ChangeUsers.jsp">Change Users</a>
-		</div>
-	
+
+  <div class="row">
+    <div class="col">History:</div>
+    <div class="col"> </div>
+    <div class="col"> 4= admin 5= seller 6 = user </div>
+  </div>
 
 		<table class="table table-light">
 			<thead>
@@ -68,7 +70,15 @@ if(auth != null){
             System.out.println("ups, error");
             e.printStackTrace();}%>
             </tbody>
-            
+           
             </table>
+            
+	<div class="d-flex py-3">
+			<a class="mx-3 btn btn-primary" href="ChangeUsers.jsp">Edit Users</a>
+		</div>
+              
+            
+            </div>
             </body>
+            <%@include file="includes/footer.jsp" %>
             </html>
