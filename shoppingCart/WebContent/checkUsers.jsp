@@ -9,7 +9,7 @@ if(auth != null){
 	 request.setAttribute("auth", auth);}%>
 
 <%  if(auth!= null && auth.getRechte()== 5){    %>           															<!-- if user not logged in logout & orders visible-->
-		<meta http-equiv="refresh" content="0; url=http://example.com/" />
+		<meta h"rttp-equiv=efresh" content="0; url=http://example.com/" />
 		<p><a href="http://example.com/">Redirect</a></p> 
     <% } %>
 

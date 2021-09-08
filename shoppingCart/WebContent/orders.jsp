@@ -38,33 +38,36 @@ if (sessionCart_list != null) {
 </head>
 <body>
 <%@include file="includes/navbar.jsp" %>
-<%if(sessionCart_list !=null){
-	for(Cart c:cartProduct){ %>
-		<tr>
-		<td><%= c.getName() %></td>
-		<td><%= c.getCategory() %></td>
-		<td><%= c.getPrice() %></td>                                                                                          <!-- for loop for each added item in cart  -->
-
-		<td>
-		<form action="" method="post" class="form-inline">
-		<input type="hidden" name="id" value="<%=c.getItmnbr() %>" class="form-input">
-		<div class="form-group d-flex justify-content-between"> 
 
 
-		<input type="text" name="quantity" class="form-control" value="1" readonly>							 <!-- Anzeigefeld Menge -->
-	
-		</div>
+<h1>Rechte </h1> 
+ <br> <br>
+		<table class="table table-light">
+			<thead>
+				<tr>
+					<th scope="col">ORDERID</th>
 
-		</form>
+				</tr>
+			</thead>
+			<tbody>
 
-		</td>
-		
-		</tr>
-<% 	}
-	
-} %>
+				
+			<tr>
+				
+			<form 	action="OrderCheck.jsp" method="post">
+					<td> <input type="text" id="ORDERID" name="ORDERID" value=""></td>
+					<td> <input type="submit"></td>  
+					
+			</form>
+				<% String orderid = request.getParameter("ORDERID");
+				   HttpSession sess = request.getSession(); 
+				   sess.setAttribute("ORDERID", orderid);
+						%>
 
-
-<%@include file="includes/footer.jsp" %>
-</body>
-</html>
+			</tr>	
+				
+            </tbody>
+            
+            </table>
+            </body>
+            </html>

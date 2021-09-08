@@ -58,7 +58,7 @@ List<Cart> cartProduct = null;
 		<div class="form-group d-flex justify-content-between"> 
 
 
-		<input type="text" name="quantity" class="form-control" value="1" readonly>							 <!-- Anzeigefeld Menge -->
+		<input type="text" name="quantity" class="form-control" value=<%= c.getQuantity() %> readonly>							 <!-- Anzeigefeld Menge -->
 	
 		</div>
 
