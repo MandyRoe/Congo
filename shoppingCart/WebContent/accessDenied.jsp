@@ -39,39 +39,16 @@ if (sessionCart_list != null) {
 <body>
 <%@include file="includes/navbar.jsp" %>
 
+
 <div class="container">
-<div class="card-header my-3">Orders</div>
-<br> <br>
-	<table class="table table-light">
-	
-			<thead>
-				
-					<th class="text-center" scope="col">ORDERID</th>
-				
-			</thead>
-			
-			<tbody>
 
-				
-			<tr>
-				
-			<form 	action="OrderCheck.jsp" method="post">
-					<td><div class="text-center"> <input type="text" id="ORDERID" name="ORDERID" value=""></div></td>
-					</tr>	
-					<tr>
-					<td <div class="text-center"><button type="submit" class="btn btn-primary">Check Order</button></div></td>
-					</tr>
-			</form>
-				<% String orderid = request.getParameter("ORDERID");
-				   HttpSession sess = request.getSession(); 
-				   sess.setAttribute("ORDERID", orderid);
-						%>
 
-			
-				
-            </tbody>
-            
-            </table>
-            </body>
-            <%@include file="includes/footer.jsp"%>
-            </html>
+
+<div class="card-header text-center"><div class="alert alert-danger" role="alert">++++AUTHORIZATION FAILED++++ <div>PLEASE CONTACT YOUR ADMIN</div></div></div>
+
+
+</div>
+
+<%@include file="includes/footer.jsp" %>
+</body>
+</html>

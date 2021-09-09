@@ -13,13 +13,13 @@
       <li class="nav-item active"><a class="nav-link" href="cart.jsp">Cart<span class="badge badge-danger" px-2>${sessionCart_list.size() }</span></a></li>
      
 	<%  if(auth!= null && auth.getRechte()== 4){    %>           															<!-- if user not logged in logout & orders visible-->
-    	<li class="nav-item active"><a class="nav-link" href="checkUsers.jsp">CheckUsers</a></li>
-    	<li class="nav-item active"><a class="nav-link" href="checkListings.jsp">ManageListings</a></li>      
+    	<li class="nav-item active"><a class="nav-link" href="checkUsers.jsp">User List</a></li>
+    	<li class="nav-item active"><a class="nav-link" href="checkListings.jsp">Product List</a></li>      
     
     <% } %>
     
     <%  if(auth!= null && auth.getRechte()== 5){    %>           															<!-- if user not logged in logout & orders visible-->
-        <li class="nav-item active"><a class="nav-link" href="checkListings.jsp">ManageListings</a></li>   
+        <li class="nav-item active"><a class="nav-link" href="checkListings.jsp">Product List</a></li>   
     <% } %>
     
     <%  if(auth!= null){    %>           															<!-- if user not logged in logout & orders visible-->

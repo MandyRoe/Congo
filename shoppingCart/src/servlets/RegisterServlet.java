@@ -44,9 +44,10 @@ public class RegisterServlet extends HttpServlet {
 			
 			String sql = "select EMAIL from USERS";
 			
-			String sql1 = "INSERT INTO USERS(NAME, EMAIL, PASSWORD) VALUES ('"+request.getParameter("register-name")+
+			String sql1 = "INSERT INTO USERS(ID, NAME, EMAIL, PASSWORD, RECHTE) VALUES (UID_seq.nextval, '"+request.getParameter("register-name")+
                     "', '"+request.getParameter("register-email")+
-                    "', '"+request.getParameter("register-password")+"')";
+                    "', '"+request.getParameter("register-password")+
+					"', 6)";
             System.out.println(sql1);
 
             try {

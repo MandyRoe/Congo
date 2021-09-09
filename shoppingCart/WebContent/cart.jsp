@@ -57,7 +57,7 @@ if (sessionCart_list != null) {
 	<div class="container">
 	<div class="card-header my-3">Cart</div>
 		<div class="d-flex py-3">
-			<h3>Total Price: Euro ${ (total>0)?dcf.format(total):0 }</h3>
+			<h3>Total Price: $ ${ (total>0)?dcf.format(total):0 }</h3>
 			<a class="mx-5 btn btn-primary" href="checkout.jsp">Check Out</a>
 		</div>
 		<!--  total price aus cart list aus der session, ansonsten 0 -->

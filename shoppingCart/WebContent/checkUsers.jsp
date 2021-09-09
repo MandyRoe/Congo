@@ -8,9 +8,9 @@
 if(auth != null){
 	 request.setAttribute("auth", auth);}%>
 
-<%  if(auth!= null && auth.getRechte()== 5){    %>           															<!-- if user not logged in logout & orders visible-->
-		<meta http-equiv="refresh" content="0; url=http://example.com/" />
-		<p><a href="http://example.com/">Redirect</a></p> 
+<%  if(auth!= null && auth.getRechte()> 4){    %>           															<!-- if user not logged in logout & orders visible-->
+		<meta http-equiv="refresh" content="0; http://localhost:8080/shoppingCart/accessDenied.jsp" />
+		
     <% } %>
 
 
@@ -31,7 +31,7 @@ if(auth != null){
   <div class="row">
     <div class="col">History:</div>
     <div class="col"> </div>
-    <div class="col"> 4= admin 5= seller 6 = user </div>
+    <div class="col"> 4= admin, 5= seller, 6 = user </div>
   </div>
 
 		<table class="table table-light">

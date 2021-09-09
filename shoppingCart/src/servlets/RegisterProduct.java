@@ -44,9 +44,9 @@ public class RegisterProduct extends HttpServlet {
 			
 			String sql = "select NAME from PRODUCTS";
 			
-			String sql1 = "INSERT INTO PRODUCTS(NAME, IMG, DESCR, PRICE, CATEGORY) VALUES ('"+request.getParameter("NAME")+"', 'placeholder.jpg', '"+request.getParameter("DESCR")+
+			String sql1 = "INSERT INTO PRODUCTS(ITEMNUMBER, NAME, IMG, DESCR, PRICE, CATEGORY) VALUES (ITEMS_SEQ.nextval, UPPER('"+request.getParameter("NAME")+"'), 'placeholder.jpg', '"+request.getParameter("DESCR")+
                     "', '"+request.getParameter("PRICE")+
-                    "', '"+request.getParameter("CATEGORY")+"')";
+                    "', UPPER('"+request.getParameter("CATEGORY")+"'))";
             System.out.println(sql1);
 
             try {
@@ -68,6 +68,7 @@ public class RegisterProduct extends HttpServlet {
     		if (counter == 0){
                Statement statement1 = connection.createStatement();                // statement verbindung zur Datenbank
                int rs1 = statement1.executeUpdate(sql1)    ;
+               response.sendRedirect("Change Listings.jsp");
     		}
 	           
 

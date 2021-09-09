@@ -3,6 +3,7 @@
 <%@page import="model.*" %>
 <%@page import="java.util.*" %>
 <%@page import="java.sql.*"%>
+<%@page import="java.text.DecimalFormat"%>
 
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -10,6 +11,9 @@
     
     
 <% 
+DecimalFormat dcf = new DecimalFormat("#.##"); //max 2 nachkommastellen
+request.setAttribute("dcf", dcf);
+
 User auth = (User) request.getSession().getAttribute("auth");                     //auth ist user objekt deswegen müssen wir casten
 if(auth != null){
 	 request.setAttribute("auth", auth);
@@ -33,7 +37,7 @@ if(auth != null){
     while (rs.next()) {
 	maxOrderID = ((Number) rs.getObject(1)).intValue();
     }
-    System.out.println(maxOrderID);
+    
       
     %>    
     
@@ -54,7 +58,8 @@ if(auth != null){
 <div>Your Order Number:</div>
 <br>
 <input type ="text" class="form-control" name="order-number" value="<%=maxOrderID %>" readonly>
-
+<br>
+<div>If you are logged in, you can always check your order again under the Orders tab</div>
 </div>
 
 </body>

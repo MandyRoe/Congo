@@ -2,11 +2,14 @@
 <%@page import="connection.*" %>
 <%@page import="model.*" %>
 <%@page import="dao.*" %>
+<%@page import="java.text.DecimalFormat"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
  <%
+ DecimalFormat dcf = new DecimalFormat("#.##"); //max 2 nachkommastellen
+ request.setAttribute("dcf", dcf);
  
  User auth = (User) request.getSession().getAttribute("auth");                     //auth ist user objekt deswegen müssen wir casten
  if(auth != null){
@@ -50,7 +53,7 @@
 		<form action = product-details> <a href="product-details?id=<%=p.getItmnbr()%>"> <img class="card-img-top" src="product_images/<%=p.getImage()%>"  alt="Error loading Image"> </a></form>
 		  <div class="card-body">
 		    <h5 class="card-title"><%=p.getName() %></h5>
-		    <h6 class="price">Price: $<%= p.getPrice() %></h6>                            <!-- jeweils Anzeige der Werte in Datenbank  -->
+		    <h6 class="price">Price: <%=p.getPrice() %>$ / per piece</h6>                            <!-- jeweils Anzeige der Werte in Datenbank  -->
 		    <h6 class="category">Category: <%= p.getCategory() %></h6>
 		
 		

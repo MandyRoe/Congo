@@ -3,15 +3,28 @@
 <%@page import="model.*" %>
 <%@page import="java.util.*" %>
 <%@page import="java.sql.*" %>
+<%@page import="java.text.DecimalFormat"%>
 
-<%User auth = (User) request.getSession().getAttribute("auth");                     //auth ist user objekt deswegen müssen wir casten  
+<%
+DecimalFormat dcf = new DecimalFormat("#.##"); //max 2 nachkommastellen
+request.setAttribute("dcf", dcf);
+
+User auth = (User) request.getSession().getAttribute("auth");                     //auth ist user objekt deswegen müssen wir casten  
 if(auth != null){
 	 request.setAttribute("auth", auth);}%>
 
-<%  if(auth!= null && auth.getRechte()== 5){    %>           															<!-- if user not logged in logout & orders visible-->
-		<meta http-equiv="refresh" content="0; url=http://example.com/" />
-		<p><a href="http://example.com/">Redirect</a></p> 
-    <% } %>
+<%  if(auth!= null && auth.getRechte()!=4 && auth.getRechte()!=5 && auth.getRechte()!=6  ){    %>           															<!-- if user not logged in logout & orders visible-->
+		<meta http-equiv="refresh" content="0; http://localhost:8080/shoppingCart/accessDenied.jsp" />
+		
+    <% } 
+    
+     
+    
+    
+    
+    
+    
+    %>
 
 
 	
@@ -29,9 +42,7 @@ if(auth != null){
 <div class="container">
 <h1>LISTINGS </h1> 
  <br> <br>
-	<div class="d-flex py-3">
-			<a class="mx-3 btn btn-primary" href="ChangeUsers.jsp">Change Listings</a>
-		</div>
+	
 	
 		
 		<table class="table table-light">
@@ -51,15 +62,17 @@ if(auth != null){
 			HttpSession sess = request.getSession();
 			
 			
-			String sql = "select PRODUCTID from ORDERS WHERE ORDERID = "+request.getParameter("ORDERID");
+			String sql = "select PRODUCTID, QUANTITY from ORDERS WHERE ORDERID = "+request.getParameter("ORDERID");
 			try {
 				
 			
 				Statement statement = connection.createStatement();				// statement verbindung zur Datenbank
 		        ResultSet rs = statement.executeQuery(sql);	
+				int quantity=0;
+				
 				while  (rs.next()) {
 					String sql1 = "select * from PRODUCTS WHERE ITEMNUMBER = "+rs.getInt("PRODUCTID");
-				
+					quantity =rs.getInt("QUANTITY");
 				
 	          	  Statement statement1 = connection.createStatement();				// statement verbindung zur Datenbank
 	           	  ResultSet rs1 = statement1.executeQuery(sql1);						//Ausführung des Strings in Datenbank
@@ -73,13 +86,21 @@ if(auth != null){
 							<td><%=rs1.getInt("ITEMNUMBER")%></td>
 							<td><%=rs1.getString("NAME")%></td>
 							<td><%=rs1.getString("DESCR")%></td>
-							<td><%=rs1.getInt("PRICE")%></td>
+							<td><%=dcf.format(rs1.getInt("PRICE"))%></td>
 							<td><%=rs1.getString("CATEGORY")%></td>
-							<td>@AlexQuantityAlsogetInt</td>
-						</tr>	
+								
 						<% 
 					}
+	           	  
+	           	  %> 
+	           	  
+	           	  <td><%=rs.getInt("QUANTITY")%></td>
+						</tr>
+	           	  
+	           	  <% 
 	           }
+				
+				
 			}	
 					catch (SQLException e) {
 	           		 System.out.println("ups, error");
@@ -88,6 +109,9 @@ if(auth != null){
            
           
             </table>
+            <div class="d-flex py-3">
+			<a class="mx-3 btn btn-primary" href="orders.jsp">Back</a>
+		</div>
             </div> 
             </body>
             </html>

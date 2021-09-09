@@ -8,10 +8,11 @@
 if(auth != null){
 	 request.setAttribute("auth", auth);}%>
 
-<%  if(auth!= null && auth.getRechte()== 5){    %>           															<!-- if user not logged in logout & orders visible-->
-		<meta http-equiv="refresh" content="0; url=http://example.com/" />
-		<p><a href="http://example.com/">Redirect</a></p> 
+<%  if(auth!= null && auth.getRechte()>4){    %>           															<!-- if user not logged in logout & orders visible-->
+		<meta http-equiv="refresh" content="0; http://localhost:8080/shoppingCart/accessDenied.jsp" />
+		
     <% } %>
+
 
 
 	
@@ -62,9 +63,8 @@ if(auth != null){
 					<td> <input type="text" id="EMAIL" name="EMAIL" value=<%=rs.getString("EMAIL")%>></td>
 					<td> <input type="text" id="PASSWORD" name="PASSWORD" value=<%=rs.getString("PASSWORD")%>></td>
 					<td> <input type="text" id="RECHTE" name="RECHTE" value=<%=rs.getInt("RECHTE")%>></td>
-					<td> <input type="submit"></td>  
-					
-			</form>
+					<td> <div class="text-center"><button type="submit" class="btn btn-primary">Edit</button></div></td>  
+						</form>
 					
 			</tr>	
 				<% }} catch (SQLException e) {

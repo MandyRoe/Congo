@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 				out.print("user login");
 			}else {
 				
-				out.print("user login failed. add error jsp");
+				response.sendRedirect("loginFailed.jsp");
 			}
 			
 		}catch (Exception e){

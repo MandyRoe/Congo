@@ -19,8 +19,13 @@
 <div class="container"> 
 <div class="card-header my-4">
 <div class="row">
-
+<div class = col>
 <a href=impressum.jsp>Impressum</a>
+</div>
+<div class = col style="font-size:10px">Done by:  Alexander Fuhlbrügge, Tobias Henning, Julius Hyla, Josephine Oelsner, Mandy Rödig, Roman Schröder</div>
+</div>
+</div>
+
 </div>
 </div>
 </div>

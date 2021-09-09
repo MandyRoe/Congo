@@ -3,14 +3,17 @@
 <%@page import="model.*" %>
 <%@page import="java.util.*" %>
 <%@page import="java.sql.*" %>
-
-<%User auth = (User) request.getSession().getAttribute("auth");                     //auth ist user objekt deswegen müssen wir casten  
+<%@page import="java.text.DecimalFormat"%>
+<%
+DecimalFormat dcf = new DecimalFormat("#.##"); //max 2 nachkommastellen
+request.setAttribute("dcf", dcf);
+User auth = (User) request.getSession().getAttribute("auth");                     //auth ist user objekt deswegen müssen wir casten  
 if(auth != null){
 	 request.setAttribute("auth", auth);}%>
 
-<%  if(auth!= null && auth.getRechte()== 5){    %>           															<!-- if user not logged in logout & orders visible-->
-		<meta http-equiv="refresh" content="0; url=http://example.com/" />
-		<p><a href="http://example.com/">Redirect</a></p> 
+<%  if(auth!= null && auth.getRechte()> 5){    %>           															<!-- if user not logged in logout & orders visible-->
+		<meta http-equiv="refresh" content="0; http://localhost:8080/shoppingCart/accessDenied.jsp" />
+	
     <% } %>
 
 
@@ -29,9 +32,7 @@ if(auth != null){
 <div class="container">
 <div class="card-header my-3">Products</div>
  <br> <br>
-	<div class="d-flex py-3">
-			<a class="mx-3 btn btn-primary" href="Change Listings.jsp">Change Listings</a>
-		</div>
+
 	
 		
 		<table class="table table-light">
@@ -63,7 +64,7 @@ if(auth != null){
 					<td><%=rs.getInt("ITEMNUMBER")%></td>
 					<td><%=rs.getString("NAME")%></td>
 					<td><%=rs.getString("DESCR")%></td>
-					<td><%=rs.getInt("PRICE")%></td>
+					<td><%=dcf.format(rs.getFloat("PRICE"))%></td>
 					<td><%=rs.getString("CATEGORY")%></td>
 				</tr>	
 				<% }} catch (SQLException e) {
@@ -73,6 +74,9 @@ if(auth != null){
            
           
             </table>
+            <div class="d-flex py-3">
+			<a class="mx-3 btn btn-primary" href="Change Listings.jsp">Edit Listings</a>
+		</div>
             </div> 
             </body>
             <%@include file="includes/footer.jsp" %>

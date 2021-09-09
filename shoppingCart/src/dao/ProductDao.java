@@ -35,7 +35,7 @@ public class ProductDao {                                     //Data Access Obje
 				row.setItmnbr((rs.getInt("ITEMNUMBER")));
 				row.setName(rs.getString("NAME"));
 				row.setDescr(rs.getString("DESCR"));
-				row.setPrice((rs.getInt("PRICE")));
+				row.setPrice((rs.getFloat("PRICE")));
 				row.setImage(rs.getString("IMG"));
 				row.setCategory(rs.getString("CATEGORY"));
 				

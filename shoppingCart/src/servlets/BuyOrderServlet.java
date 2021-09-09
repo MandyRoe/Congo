@@ -84,8 +84,8 @@ public class BuyOrderServlet extends HttpServlet {
             	
             	for (Cart c:cartProduct) {
                     
-        			String sql1 = "INSERT INTO ORDERS (ORDERID, PRODUCTID) VALUES ('"+maxOrderID+"', '"+c.getItmnbr()+
-                            "')";
+        			String sql1 = "INSERT INTO ORDERS (ORDERID, PRODUCTID, QUANTITY) VALUES ('"+maxOrderID+"', '"+c.getItmnbr()+
+                            "', '"+c.getQuantity()+"')";
         			
                     System.out.println(sql1);
                     Statement statement1 = connection.createStatement();                // statement verbindung zur Datenbank
