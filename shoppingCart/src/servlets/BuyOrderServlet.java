@@ -92,6 +92,7 @@ public class BuyOrderServlet extends HttpServlet {
                     int rs1 = statement1.executeUpdate(sql1)    ;
                     
             		}
+            	
             	response.sendRedirect("orderConfirmation.jsp");
                 }
                

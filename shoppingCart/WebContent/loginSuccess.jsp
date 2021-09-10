@@ -43,7 +43,7 @@ if (sessionCart_list != null) {
 <div class="container">
 
 <div class="card w-50 mx-auto my-5">
-<div class="card-header text-center">Success! <div class="col-my-2">You may now log in</div></div>
+<div class="card-header text-center" style="color:green">Success! <div class="col-my-2">You may now log in</div></div>
 
 <div class="card-body">
 <form action="user-login" method="post"> 

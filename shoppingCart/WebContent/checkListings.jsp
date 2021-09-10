@@ -40,7 +40,7 @@ if(auth != null){
 				<tr>
 					<th scope="col">ITEMNUMBER</th>
 					<th scope="col">NAME</th>
-					<th scope="col">DESCR</th>
+					<th scope="col">DESCRIPTION</th>
 					<th scope="col">PRICE</th>
 					<th scope="col">CATEGORY</th>
 				</tr>

@@ -83,15 +83,12 @@ List<Cart> cartProduct = null;
 
 
 
-<br> 
-<form action="BuyOrderServlet" method="post"> 
-<td><button type="submit" class="btn btn sm btn-primary" href="orderConfirmation.jsp">Buy</button></td>
-</form>
+<br> <br> 
 
 
 <div class="ui form">
   <div class="grouped fields">
-    <label>Payment method</label>
+  <b> <label>Payment method</label></b>
     <div class="field">
       <div class="ui radio checkbox">
         <input type="radio" name="payment" checked="checked">
@@ -118,11 +115,12 @@ List<Cart> cartProduct = null;
     </div>
   </div>
 </div>
-
+<br> 
+<br> 
 
 <div class="ui form">
   <div class="grouped fields">
-    <label>Delivery Method</label>
+   <b> <label>Delivery Method</label></b>
     <div class="field">
       <div class="ui radio checkbox">
         <input type="radio" name="delivery" checked="checked">
@@ -139,11 +137,15 @@ List<Cart> cartProduct = null;
     </div>
 
 
+<br> 
 
-
+<form action="BuyOrderServlet" method="post"> 
+<td><button type="submit" class="btn btn sm btn-primary" href="orderConfirmation.jsp">Buy</button></td>
+</form>
 
 
 </div>
+
 </body>
 <%@include file="includes/footer.jsp" %>
 </html>

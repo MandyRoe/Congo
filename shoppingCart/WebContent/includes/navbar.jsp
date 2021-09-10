@@ -10,7 +10,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active"><a class="nav-link" href="index.jsp">Home </a></li>
-      <li class="nav-item active"><a class="nav-link" href="cart.jsp">Cart<span class="badge badge-danger" px-2>${sessionCart_list.size() }</span></a></li>
+      <li class="nav-item active"><a class="nav-link" href="cart.jsp">Cart<span class="badge badge-danger" </span></a></li>
      
 	<%  if(auth!= null && auth.getRechte()== 4){    %>           															<!-- if user not logged in logout & orders visible-->
     	<li class="nav-item active"><a class="nav-link" href="checkUsers.jsp">User List</a></li>

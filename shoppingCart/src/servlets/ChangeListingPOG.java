@@ -52,6 +52,7 @@ public class ChangeListingPOG extends HttpServlet {
 
                Statement statement = connection.createStatement();                // statement verbindung zur Datenbank
                int rs = statement.executeUpdate(sql)    ;
+               response.sendRedirect("Change Listings.jsp");
 	           
 	           
 

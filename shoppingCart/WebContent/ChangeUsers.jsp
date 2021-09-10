@@ -29,6 +29,12 @@ if(auth != null){
 <div class="container">
 <div class="card-header my-3">Edit Users</div>
  <br> <br>
+ 
+ <div class="row">
+    <div class="col">History:</div>
+    <div class="col"> </div>
+    <div class="col"> 4= admin, 5= seller, 6 = user </div>
+  </div>
 		<table class="table table-light">
 			<thead>
 				<tr>
@@ -36,7 +42,7 @@ if(auth != null){
 					<th scope="col">NAME</th>
 					<th scope="col">EMAIL</th>
 					<th scope="col">PASSWORD</th>
-					<th scope="col">RECHTE</th>
+					<th scope="col">RIGHTS</th>
 					<th scope="col">CONFIRM</th>
 				</tr>
 			</thead>

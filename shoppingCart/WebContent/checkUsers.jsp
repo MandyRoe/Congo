@@ -41,7 +41,7 @@ if(auth != null){
 					<th scope="col">NAME</th>
 					<th scope="col">EMAIL</th>
 					<th scope="col">PASSWORD</th>
-					<th scope="col">RECHTE</th>
+					<th scope="col">RIGHTS</th>
 				</tr>
 			</thead>
 			<tbody>
